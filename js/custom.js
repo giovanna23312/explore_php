@@ -1,5 +1,16 @@
 /*  ///////////////////  FUNÇÕES   ////////////////////  */
-const aviso = (msg)=> {
+
+//Ao carregar a pagina verifica o parametro CADASTRO, se o valor for OK exibe um alert 
+const urlParams = new URLSearchParams(window.location.search)
+var parCadastro = urlParams.get('cadastro') 
+if(parCadastro == 'ok'){
+  let listaClasses = document.getElementById('msg').classList
+  listaClasses.remove9('d-none')
+  //  alert('Usuário Cadastrado com Sucesso!!!!')
+  //  window.location.href
+}
+
+const aviso = (msg)=>{
   alert(msg)
 }
 
@@ -15,7 +26,7 @@ let dia = dataAtual.getDay()
 let mes = dataAtual.getMonth() + 1
 let ano = dataAtual.getFullYear()
 let hora = dataAtual.getHours()
-let valor = dia +'/'+ mes + '/' + ano + ' - ' + hora
+let valor = dia +'/'+ mes + '/' + ano  
 
 document.getElementById('dt-cadastro').value = valor
 }
